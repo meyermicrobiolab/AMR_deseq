@@ -1,0 +1,104 @@
+---
+title: "AMR_deseq2"
+author: "J. Meyer"
+date: "2023-06-06"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Prepare data for DeSeq2: 1. Count data should be formatted with genes in rows and samples in columns. 2. Metadata for the samples should be formatted with samples in rows and metadata in columns.
+
+
+```{r, echo=FALSE}
+
+counts <- read.table("20-samples-Bact-cds-counts.txt",sep="\t",header=TRUE)
+
+# DeSeq is looking for only counts, without a first column of gene names, make the gene names row names.
+mat <- counts[,-1]
+rownames(mat) <- counts[,1]
+# The Salmon counts have decimal places - round them up to prevent issues in deseq
+counts2<-round(mat,digits=0)
+
+# remove the disease samples from this first analysis
+counts2$AMR1D <- NULL
+counts2$AMR2D <- NULL
+counts2$AMR3D <- NULL
+counts2$AMR5D <- NULL
+counts2$AMR7D <- NULL
+counts2$AMR8D <- NULL
+counts2$AMR9D <- NULL
+
+
+meta <-read.table("metadata.txt",sep="\t",header=TRUE)
+# remove disease samples to compare just before and after antibiotic treatment
+meta2 <-meta[meta$type != "disease",]
+
+```
+
+
+Run DeSeq2 to test for differentially expressed genes between coral colonies immediately before treatment ("untreated") and one day after amoxicillin treatment ("antibiotic").
+
+
+```{r, echo=FALSE}
+library(DESeq2)
+library(ggplot2)
+
+
+
+#construct DESEQDataSet Object
+dds <- DESeqDataSetFromMatrix(countData=counts2, 
+                              colData=meta2, 
+                              design=~type)
+#see what the object looks like
+dds
+
+#now run DESeq function
+dds <- DESeq(dds)
+resultsNames(dds) # lists the coefficients
+res <- results(dds, name="type_untreated_vs_antibiotic")
+summary(res)
+
+
+
+
+
+
+
+# or to shrink log fold changes association with condition:
+res <- lfcShrink(dds, coef="type_untreated_vs_antibiotic", type="apeglm")
+
+
+
+```
+
+
+Here, I need to combine the deseq results with the annotations from RGI (Resistance Gene Identifier using the Comprehensive Antibiotic Resistance Database (CARD)). RGI was run on hipergator because the fasta file was too large for the web-based tool. 
+
+
+```{r, echo=FALSE}
+
+
+rgi <- read.table("rgi_out.txt",sep="\t",header=TRUE,quote="")
+rgi_counts <-merge(rgi,counts,by="transcript_id")
+
+
+# remove disease samples to compare just before and after antibiotic treatment
+meta2 <-meta[meta$type != "disease",]
+rgi_counts2 <- rgi_counts
+rgi_counts2$AMR1D <- NULL
+rgi_counts2$AMR2D <- NULL
+rgi_counts2$AMR3D <- NULL
+rgi_counts2$AMR5D <- NULL
+rgi_counts2$AMR7D <- NULL
+rgi_counts2$AMR8D <- NULL
+rgi_counts2$AMR9D <- NULL
+
+
+
+
+```
+
+
