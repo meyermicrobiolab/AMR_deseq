@@ -69,6 +69,10 @@ resultsNames(dds) # lists the coefficients
 res <- results(dds, name="type_untreated_vs_antibiotic")
 summary(res)
 
+sink("DESeq2_results.txt")
+print(res)
+sink()
+
 
 
 

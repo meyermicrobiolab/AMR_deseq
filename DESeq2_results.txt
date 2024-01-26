@@ -1,0 +1,1 @@
+> res <- results(dds, name="type_untreated_vs_antibiotic")> summary(res)out of 52190 with nonzero total read countadjusted p-value < 0.1LFC > 0 (up)       : 0, 0%LFC < 0 (down)     : 0, 0%outliers [1]       : 2708, 5.2%low counts [2]     : 64, 0.12%(mean count < 0)[1] see 'cooksCutoff' argument of ?results[2] see 'independentFiltering' argument of ?results
