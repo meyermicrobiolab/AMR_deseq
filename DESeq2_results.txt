@@ -1,1 +1,16 @@
-> res <- results(dds, name="type_untreated_vs_antibiotic")> summary(res)out of 52190 with nonzero total read countadjusted p-value < 0.1LFC > 0 (up)       : 0, 0%LFC < 0 (down)     : 0, 0%outliers [1]       : 2708, 5.2%low counts [2]     : 64, 0.12%(mean count < 0)[1] see 'cooksCutoff' argument of ?results[2] see 'independentFiltering' argument of ?results
+log2 fold change (MLE): type untreated vs antibiotic 
+Wald test p-value: type untreated vs antibiotic 
+DataFrame with 52254 rows and 6 columns
+                baseMean log2FoldChange     lfcSE       stat    pvalue      padj
+               <numeric>      <numeric> <numeric>  <numeric> <numeric> <numeric>
+k141_3_1       0.0710774     -0.1568221   3.18535 -0.0492323  0.960734  0.988338
+k141_81_1      0.4261009      2.1543127   3.12786  0.6887498  0.490981  0.988338
+k141_170_1     9.0668838      0.0562818   1.11317  0.0505599  0.959676  0.988338
+k141_170_2     6.1318124     -0.4043784   1.01468 -0.3985274  0.690241  0.988338
+k141_221_1     0.2585067      1.0824030   3.17756  0.3406401  0.733375  0.988338
+...                  ...            ...       ...        ...       ...       ...
+k141_2226751_1 0.0754323      -0.156822   3.18535 -0.0492323  0.960734  0.988338
+k141_2226751_2 0.1892130      -0.890666   3.18456 -0.2796828  0.779721  0.988338
+k141_2226817_1 0.2035150      -0.517491   3.18535 -0.1624598  0.870944  0.988338
+k141_2226843_1 0.0937147       0.780919   3.18535  0.2451597  0.806333  0.988338
+k141_2226950_1 0.8267403       3.657104   3.08662  1.1848245  0.236087  0.988338

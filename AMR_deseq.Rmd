@@ -23,7 +23,7 @@ rownames(mat) <- counts[,1]
 counts2<-round(mat,digits=0)
 
 
-# remove the disease samples from this first analysis
+# remove the disease samples from this analysis
 counts2$AMR1D <- NULL
 counts2$AMR2D <- NULL
 counts2$AMR3D <- NULL
@@ -43,6 +43,7 @@ write.table(rgi_counts,"Untreated-vs-antibiotic_RGI-counts.txt",sep="\t",col.nam
 meta <-read.table("metadata.txt",sep="\t",header=TRUE)
 # remove disease samples to compare just before and after antibiotic treatment
 meta2 <-meta[meta$type != "disease",]
+write.table(meta2,"metadata_13.txt",sep="\t",col.names=NA)
 
 ```
 
@@ -54,10 +55,8 @@ Run DeSeq2 to test for differentially expressed genes between coral colonies imm
 library(DESeq2)
 library(ggplot2)
 
-
-
 #construct DESEQDataSet Object
-dds <- DESeqDataSetFromMatrix(countData=counts2, 
+dds <- DESeqDataSetFromMatrix(countData=counts3, 
                               colData=meta2, 
                               design=~type)
 #see what the object looks like
@@ -73,44 +72,5 @@ sink("DESeq2_results.txt")
 print(res)
 sink()
 
-
-
-
-
-
-
-# or to shrink log fold changes association with condition:
-res <- lfcShrink(dds, coef="type_untreated_vs_antibiotic", type="apeglm")
-
-
-
 ```
-
-
-Here, I need to combine the deseq results with the annotations from RGI (Resistance Gene Identifier using the Comprehensive Antibiotic Resistance Database (CARD)). RGI was run on hipergator because the fasta file was too large for the web-based tool. 
-
-
-```{r, echo=FALSE}
-
-
-rgi <- read.table("rgi_out.txt",sep="\t",header=TRUE,quote="")
-rgi_counts <-merge(rgi,counts,by="transcript_id")
-
-
-# remove disease samples to compare just before and after antibiotic treatment
-meta2 <-meta[meta$type != "disease",]
-rgi_counts2 <- rgi_counts
-rgi_counts2$AMR1D <- NULL
-rgi_counts2$AMR2D <- NULL
-rgi_counts2$AMR3D <- NULL
-rgi_counts2$AMR5D <- NULL
-rgi_counts2$AMR7D <- NULL
-rgi_counts2$AMR8D <- NULL
-rgi_counts2$AMR9D <- NULL
-
-
-
-
-```
-
 
