@@ -229,7 +229,7 @@ meta$X <- NULL
 mech <-read.table("Untreated-vs-antibiotic_ResistanceMechanism-counts.txt",sep="\t",header=TRUE)
 mech$X <- NULL
 #calculate relative abundance from counts
-mech_RA <- mech[,-1]/colSums(mech[,-1]) * 100
+mech_RA <- mech[-1,]/colSums(mech[,-1]) * 100
 mech_RA$Resistance.Mechanism <- mech$Resistance.Mechanism
 
 #merge metadata and count dataframes - start by converting mech from wide to long format
@@ -238,7 +238,9 @@ colnames(mech_long)[colnames(mech_long) == "variable"] <- "sample"
 colnames(mech_long)[colnames(mech_long) == "value"] <- "proportion"
 resist <-merge(meta, mech_long, "sample")
 
-#plot as stacked bars?
+#plot as stacked bars
+ggplot(resist, aes(fill=Resistance.Mechanism, x=sample, y=proportion)) +geom_bar(position="fill",stat="identity")+facet_grid(. ~ type, scales="free", space="free")
+# to do: better colors, 90 degree shift of x-axis labels
 
 ```
 
