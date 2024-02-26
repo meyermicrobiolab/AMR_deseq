@@ -1,0 +1,12 @@
+""	"Resistance.Mechanism"	"AMR1A"	"AMR1H"	"AMR2A"	"AMR3A"	"AMR3H"	"AMR4A"	"AMR5A"	"AMR5H"	"AMR6A"	"AMR7A"	"AMR7H"	"AMR9H"	"AMR10A"
+"1"	"antibiotic efflux"	255325	113890	118063	151129	535606	272516	142185	99761	233630	178721	225726	162012	218510
+"2"	"antibiotic efflux; reduced permeability to antibiotic"	3459	907	506	891	393	1994	366	280	365	349	1794	355	756
+"3"	"antibiotic inactivation"	332526	154236	147179	207399	344743	282450	163676	112646	243497	153556	253404	162915	166502
+"4"	"antibiotic target alteration"	112455	47515	36266	60403	67749	84444	44661	31710	56899	40617	82340	43372	50588
+"5"	"antibiotic target alteration; antibiotic efflux"	4234	1545	1415	2150	2037	3304	1481	982	1949	1406	3172	1480	2107
+"6"	"antibiotic target alteration; antibiotic efflux; reduced permeability to antibiotic"	955	276	103	218	6	667	45	13	50	54	333	86	170
+"7"	"antibiotic target alteration; antibiotic efflux; resistance by absence"	170	68	6	39	0	59	0	13	7	3	46	6	4
+"8"	"antibiotic target alteration; antibiotic target replacement"	5028	1454	857	1283	770	3067	677	257	768	620	2778	721	918
+"9"	"antibiotic target protection"	46168	20224	17081	23854	31845	38987	17024	12306	26855	15760	38541	19395	20662
+"10"	"antibiotic target replacement"	14158	5306	3882	6554	6603	10063	4944	3028	5718	4541	10779	4698	5888
+"11"	"reduced permeability to antibiotic"	5186	2326	2292	2910	5887	5139	1991	1736	3447	1799	3646	2304	2221

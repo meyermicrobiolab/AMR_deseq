@@ -1,0 +1,141 @@
+""	"Drug.Class"	"AMR1A"	"AMR1H"	"AMR2A"	"AMR3A"	"AMR3H"	"AMR4A"	"AMR5A"	"AMR5H"	"AMR6A"	"AMR7A"	"AMR7H"	"AMR9H"	"AMR10A"
+"1"	"aminocoumarin antibiotic"	7567	2762	2285	3613	4492	5911	2779	1858	3164	2299	5261	2140	3087
+"2"	"aminoglycoside antibiotic"	58484	24160	23183	33731	40850	47384	24483	17783	35230	21237	42555	25767	27416
+"3"	"aminoglycoside antibiotic; aminocoumarin antibiotic"	4459	2253	1304	2651	2414	3265	1920	1463	2393	1807	2784	2142	2209
+"4"	"aminoglycoside antibiotic; cephalosporin; cephamycin; penam"	3366	1157	776	1314	717	2315	694	480	824	721	1906	835	1123
+"5"	"aminoglycoside antibiotic; tetracycline antibiotic; phenicol antibiotic"	23	15	7	24	44	63	27	18	17	23	50	15	40
+"6"	"antibacterial free fatty acids"	1930	531	227	352	11	1109	60	33	103	95	1279	124	366
+"7"	"bicyclomycin-like antibiotic"	1277	385	164	445	136	924	218	110	237	172	505	239	323
+"8"	"carbapenem"	38099	18399	16974	24293	40967	33131	20629	13118	34566	20092	30662	21727	19106
+"9"	"carbapenem; cephalosporin"	6254	2225	1451	2236	2119	4182	1344	874	1746	1280	4408	1515	2005
+"10"	"carbapenem; cephalosporin; cephamycin"	285	153	56	198	122	201	198	131	187	151	156	155	171
+"11"	"carbapenem; cephalosporin; cephamycin; penam"	8445	3031	2670	3223	4136	6115	2324	1425	3086	2336	5598	2735	3561
+"12"	"carbapenem; cephalosporin; cephamycin; penam; penem"	4640	1518	1290	1740	2840	3328	1491	840	1787	1253	3154	1268	1545
+"13"	"carbapenem; cephalosporin; penam"	46856	21246	21935	29975	51503	41774	22863	16300	32430	21026	35565	22303	24064
+"14"	"carbapenem; cephalosporin; penam; tetracycline antibiotic"	671	368	255	565	274	533	331	254	371	297	416	273	382
+"15"	"carbapenem; penam"	1165	462	279	591	394	897	232	318	298	271	1024	325	370
+"16"	"carbapenem; peptide antibiotic; aminocoumarin antibiotic; rifamycin antibiotic"	1074	451	292	563	527	789	445	216	602	429	621	413	468
+"17"	"cephalosporin"	25150	11113	11593	15199	27281	21110	11606	8143	18201	10630	17476	11628	11450
+"18"	"cephalosporin; cephamycin"	2921	1316	889	1613	1379	1965	1259	777	1395	1289	1902	1204	1036
+"19"	"cephalosporin; cephamycin; penam"	7000	3588	4080	5045	9845	6837	4168	2669	7194	3516	5218	4447	2973
+"20"	"cephalosporin; cephamycin; penam; penem"	296	97	56	78	23	189	20	26	53	18	206	34	84
+"21"	"cephalosporin; penam"	13873	5937	4712	8019	8974	10287	6208	3979	7000	5374	10485	5784	6237
+"22"	"cephalosporin; penam; penem"	955	536	466	636	899	827	614	340	679	560	948	511	717
+"23"	"cephalosporin; penam; peptide antibiotic"	2226	866	929	1537	2411	2035	1259	909	1786	914	1436	1092	803
+"24"	"cephalosporin; penem"	2203	1550	1207	2553	1837	1938	2367	1224	2535	1892	1615	1736	1626
+"25"	"cephamycin"	4681	1984	1311	2267	2365	3410	1385	1020	1903	1270	3350	1264	1748
+"26"	"diaminopyrimidine antibiotic"	8365	3499	2715	4664	5109	6312	3684	2345	4223	3420	7454	3498	4309
+"27"	"disinfecting agents and antiseptics"	5927	1926	1153	2778	1646	3899	1454	1048	1534	1417	3619	1410	1655
+"28"	"disinfecting agents and antiseptics; isoniazid-like antibiotic"	1365	261	120	395	48	756	111	52	97	104	358	118	262
+"29"	"elfamycin antibiotic"	1201	480	360	329	581	904	191	131	366	199	2597	240	433
+"30"	"fluoroquinolone antibiotic"	13530	4644	3127	4372	2805	8726	2670	1481	3148	2394	10519	2536	3801
+"31"	"fluoroquinolone antibiotic; aminoglycoside antibiotic"	5155	3166	3115	5023	6075	5032	4113	3190	5463	3975	4278	3899	4148
+"32"	"fluoroquinolone antibiotic; aminoglycoside antibiotic; disinfecting agents and antiseptics"	1302	852	1651	1063	5507	1923	1042	829	2610	856	1316	1023	874
+"33"	"fluoroquinolone antibiotic; aminoglycoside antibiotic; penam; tetracycline antibiotic; disinfecting agents and antiseptics"	443	204	209	344	181	339	262	166	278	280	324	212	196
+"34"	"fluoroquinolone antibiotic; carbapenem; cephalosporin; cephamycin; penam"	11	0	0	0	0	4	7	0	0	0	0	0	1
+"35"	"fluoroquinolone antibiotic; cephalosporin; cephamycin; penam"	1690	913	1822	1394	5616	2415	1102	899	2619	1013	2203	1247	1336
+"36"	"fluoroquinolone antibiotic; cephalosporin; glycylcycline; cephamycin; penam; tetracycline antibiotic; rifamycin antibiotic; phenicol antibiotic; disinfecting agents and antiseptics"	182	81	34	38	7	145	26	22	36	21	86	25	46
+"37"	"fluoroquinolone antibiotic; cephalosporin; glycylcycline; penam; tetracycline antibiotic; oxazolidinone antibiotic; glycopeptide antibiotic; rifamycin antibiotic; phenicol antibiotic; disinfecting agents and antiseptics"	271	119	23	53	4	164	16	4	14	10	66	12	32
+"38"	"fluoroquinolone antibiotic; cephalosporin; glycylcycline; penam; tetracycline antibiotic; rifamycin antibiotic; phenicol antibiotic; disinfecting agents and antiseptics"	4749	1734	1013	1737	1019	3282	1057	544	1247	1038	3412	1010	1322
+"39"	"fluoroquinolone antibiotic; cephalosporin; penam; tetracycline antibiotic; peptide antibiotic; disinfecting agents and antiseptics"	403	115	55	116	88	254	79	40	127	78	160	119	106
+"40"	"fluoroquinolone antibiotic; diaminopyrimidine antibiotic; phenicol antibiotic"	6288	1613	817	1357	846	3659	588	377	829	569	3621	651	1052
+"41"	"fluoroquinolone antibiotic; disinfecting agents and antiseptics"	3326	1054	760	915	727	2159	501	331	699	501	2730	523	1032
+"42"	"fluoroquinolone antibiotic; glycylcycline; tetracycline antibiotic; diaminopyrimidine antibiotic; nitrofuran antibiotic"	1758	916	860	1439	1659	1657	1105	765	1121	1053	1628	984	1081
+"43"	"fluoroquinolone antibiotic; lincosamide antibiotic; nucleoside antibiotic; phenicol antibiotic; disinfecting agents and antiseptics"	582	163	88	71	52	348	79	50	97	56	346	57	122
+"44"	"fluoroquinolone antibiotic; monobactam; carbapenem; cephalosporin; glycylcycline; cephamycin; penam; tetracycline antibiotic; rifamycin antibiotic; phenicol antibiotic; penem; disinfecting agents and antiseptics"	2464	686	290	524	157	1416	267	104	187	187	832	201	435
+"45"	"fluoroquinolone antibiotic; monobactam; cephalosporin"	1392	925	703	1266	1785	1225	1408	719	1460	1133	864	1097	1119
+"46"	"fluoroquinolone antibiotic; nucleoside antibiotic; phenicol antibiotic; disinfecting agents and antiseptics"	252	173	101	186	186	172	160	105	141	184	214	162	221
+"47"	"fluoroquinolone antibiotic; rifamycin antibiotic"	683	249	59	158	26	447	75	9	80	39	192	66	91
+"48"	"fluoroquinolone antibiotic; tetracycline antibiotic"	5356	1780	1141	1466	812	3813	864	366	902	731	2668	804	1487
+"49"	"fluoroquinolone antibiotic; tetracycline antibiotic; disinfecting agents and antiseptics"	3285	1560	1590	2563	2533	2833	2118	1593	2392	1644	3306	1725	2209
+"50"	"fluoroquinolone antibiotic; tetracycline antibiotic; nitroimidazole antibiotic"	331	124	78	108	2	338	11	9	65	21	236	24	91
+"51"	"fusidane antibiotic"	2737	1290	1408	2118	5103	2286	1464	1127	1772	1327	2594	1617	1364
+"52"	"glycopeptide antibiotic"	40038	16468	13470	19866	23882	30572	15046	10123	19024	13467	28093	13869	16410
+"53"	"glycylcycline; tetracycline antibiotic"	7746	2679	1805	2849	1684	4684	1802	1038	2110	1514	5993	1599	2672
+"54"	"isoniazid-like antibiotic"	2072	580	282	434	128	1188	212	68	228	132	1106	166	314
+"55"	"lincosamide antibiotic"	6104	2625	1966	3261	3687	4836	2242	1371	3039	2095	4928	2117	2339
+"56"	"lincosamide antibiotic; streptogramin antibiotic; oxazolidinone antibiotic; glycopeptide antibiotic; phenicol antibiotic"	3450	3182	2481	6584	4671	3651	5507	4259	4811	4785	3013	5357	5748
+"57"	"lincosamide antibiotic; streptogramin antibiotic; oxazolidinone antibiotic; phenicol antibiotic"	939	231	200	318	221	448	270	148	230	192	252	238	265
+"58"	"lincosamide antibiotic; streptogramin antibiotic; pleuromutilin antibiotic"	671	222	135	200	142	399	199	77	255	129	636	152	219
+"59"	"lincosamide antibiotic; streptogramin antibiotic; streptogramin A antibiotic; oxazolidinone antibiotic; phenicol antibiotic; pleuromutilin antibiotic"	2356	1134	897	1117	2056	1708	1148	782	1318	877	1835	1044	1182
+"60"	"lincosamide antibiotic; streptogramin antibiotic; streptogramin A antibiotic; pleuromutilin antibiotic"	10782	5017	6196	6979	14129	11119	5493	4361	8833	4923	8464	5209	5995
+"61"	"lincosamide antibiotic; streptogramin antibiotic; streptogramin A antibiotic; streptogramin B antibiotic; oxazolidinone antibiotic; phenicol antibiotic; pleuromutilin antibiotic"	368	101	60	89	23	185	20	23	24	32	75	23	51
+"62"	"lincosamide antibiotic; streptogramin antibiotic; streptogramin A antibiotic; streptogramin B antibiotic; pleuromutilin antibiotic"	1565	2043	377	913	767	1642	489	663	2684	675	3541	3654	684
+"63"	"lincosamide antibiotic; streptogramin antibiotic; streptogramin B antibiotic"	1171	318	173	254	85	748	79	18	143	79	779	81	216
+"64"	"macrolide antibiotic"	73284	42383	56384	59679	414576	130730	77290	56138	147164	120781	91721	99706	143926
+"65"	"macrolide antibiotic; aminocoumarin antibiotic"	19	0	3	0	0	0	6	1	5	0	15	0	4
+"66"	"macrolide antibiotic; aminoglycoside antibiotic; cephalosporin; tetracycline antibiotic; peptide antibiotic; rifamycin antibiotic; disinfecting agents and antiseptics"	310	124	59	182	67	280	93	45	63	96	286	82	115
+"67"	"macrolide antibiotic; aminoglycoside antibiotic; oxazolidinone antibiotic; diaminopyrimidine antibiotic; phenicol antibiotic"	457	174	68	150	46	314	64	47	51	52	156	61	107
+"68"	"macrolide antibiotic; carbapenem; tetracycline antibiotic; diaminopyrimidine antibiotic; phenicol antibiotic; disinfecting agents and antiseptics"	2251	563	311	586	147	1320	205	102	289	176	1293	248	414
+"69"	"macrolide antibiotic; disinfecting agents and antiseptics"	761	224	132	210	101	578	157	82	134	108	587	147	248
+"70"	"macrolide antibiotic; fluoroquinolone antibiotic"	468	134	73	151	45	231	54	54	54	38	370	47	98
+"71"	"macrolide antibiotic; fluoroquinolone antibiotic; aminoglycoside antibiotic; carbapenem; cephalosporin; cephamycin; penam; tetracycline antibiotic; phenicol antibiotic; disinfecting agents and antiseptics"	1507	378	461	417	535	878	355	205	421	272	1843	273	411
+"72"	"macrolide antibiotic; fluoroquinolone antibiotic; aminoglycoside antibiotic; carbapenem; cephalosporin; glycylcycline; cephamycin; penam; tetracycline antibiotic; peptide antibiotic; aminocoumarin antibiotic; rifamycin antibiotic; phenicol antibiotic; penem; disinfecting agents and antiseptics"	513	286	437	367	1209	796	254	173	742	222	711	335	284
+"73"	"macrolide antibiotic; fluoroquinolone antibiotic; aminoglycoside antibiotic; carbapenem; cephalosporin; penam; peptide antibiotic; penem"	1390	305	170	322	165	921	150	71	196	141	828	123	227
+"74"	"macrolide antibiotic; fluoroquinolone antibiotic; aminoglycoside antibiotic; carbapenem; tetracycline antibiotic"	709	310	114	185	65	559	114	90	191	100	792	136	241
+"75"	"macrolide antibiotic; fluoroquinolone antibiotic; aminoglycoside antibiotic; cephalosporin"	3191	1372	942	1769	1348	2475	1373	757	1512	1174	2036	1135	1449
+"76"	"macrolide antibiotic; fluoroquinolone antibiotic; aminoglycoside antibiotic; cephalosporin; penam; tetracycline antibiotic; aminocoumarin antibiotic; diaminopyrimidine antibiotic; phenicol antibiotic"	5221	1678	1064	1741	1537	3066	1565	685	1561	1036	2859	1066	1299
+"77"	"macrolide antibiotic; fluoroquinolone antibiotic; cephalosporin; cephamycin; penam; tetracycline antibiotic"	260	58	19	51	1	201	8	3	11	11	101	9	54
+"78"	"macrolide antibiotic; fluoroquinolone antibiotic; cephalosporin; fusidane antibiotic"	4484	2409	3589	3943	12343	5672	3369	2562	5924	3119	3853	3606	3311
+"79"	"macrolide antibiotic; fluoroquinolone antibiotic; lincosamide antibiotic; carbapenem; cephalosporin; tetracycline antibiotic; rifamycin antibiotic; diaminopyrimidine antibiotic; phenicol antibiotic; penem"	3120	1359	1114	1950	1896	2090	1370	1015	1729	1314	2448	1182	1582
+"80"	"macrolide antibiotic; fluoroquinolone antibiotic; monobactam; aminoglycoside antibiotic; carbapenem; cephalosporin; cephamycin; penam; tetracycline antibiotic; peptide antibiotic; aminocoumarin antibiotic; diaminopyrimidine antibiotic; sulfonamide antibiotic; phenicol antibiotic; penem"	456	143	60	67	7	284	43	1	67	34	307	44	128
+"81"	"macrolide antibiotic; fluoroquinolone antibiotic; monobactam; aminoglycoside antibiotic; carbapenem; cephalosporin; cephamycin; penam; tetracycline antibiotic; peptide antibiotic; aminocoumarin antibiotic; diaminopyrimidine antibiotic; sulfonamide antibiotic; phenicol antibiotic; penem; disinfecting agents and antiseptics"	3842	3239	1824	4781	4411	3784	3976	2619	3995	3442	2741	3356	3610
+"82"	"macrolide antibiotic; fluoroquinolone antibiotic; monobactam; aminoglycoside antibiotic; carbapenem; cephalosporin; cephamycin; penam; tetracycline antibiotic; phenicol antibiotic; penem; disinfecting agents and antiseptics"	1950	497	319	585	242	1245	144	189	228	216	1295	240	491
+"83"	"macrolide antibiotic; fluoroquinolone antibiotic; monobactam; carbapenem; cephalosporin; cephamycin; penam; tetracycline antibiotic; peptide antibiotic; aminocoumarin antibiotic; diaminopyrimidine antibiotic; sulfonamide antibiotic; phenicol antibiotic; penem"	6211	2860	2574	6979	3742	4231	4164	3947	3535	3612	4323	4101	4490
+"84"	"macrolide antibiotic; fluoroquinolone antibiotic; penam"	2493	999	755	1160	1401	1880	822	502	919	735	1837	685	986
+"85"	"macrolide antibiotic; fluoroquinolone antibiotic; penam; tetracycline antibiotic"	7151	3241	3264	4614	7057	6405	3759	2460	6317	3613	4232	3820	3641
+"86"	"macrolide antibiotic; fluoroquinolone antibiotic; rifamycin antibiotic"	1399	467	403	472	649	1079	420	177	614	288	1303	300	592
+"87"	"macrolide antibiotic; fluoroquinolone antibiotic; tetracycline antibiotic; phenicol antibiotic"	2810	703	402	615	340	1460	313	155	344	262	1489	241	580
+"88"	"macrolide antibiotic; fluoroquinolone antibiotic; tetracycline antibiotic; phenicol antibiotic; disinfecting agents and antiseptics"	2327	951	865	1218	1565	1893	756	509	1125	634	2113	709	938
+"89"	"macrolide antibiotic; lincosamide antibiotic"	3216	1389	1355	2127	2430	3207	1666	1123	2074	1508	2609	1501	1966
+"90"	"macrolide antibiotic; lincosamide antibiotic; orthosomycin antibiotic"	708	256	109	124	77	378	35	14	78	44	449	68	149
+"91"	"macrolide antibiotic; lincosamide antibiotic; streptogramin antibiotic"	7545	3871	3192	4922	11315	6695	3685	3208	8699	4110	5660	5369	5471
+"92"	"macrolide antibiotic; lincosamide antibiotic; streptogramin antibiotic; streptogramin A antibiotic; streptogramin B antibiotic"	7752	3376	3093	4582	6568	6286	3445	2173	4642	3325	5934	3224	3569
+"93"	"macrolide antibiotic; lincosamide antibiotic; streptogramin antibiotic; streptogramin B antibiotic"	2428	1455	1091	2581	1912	2089	1814	1281	1986	1653	2520	1506	1597
+"94"	"macrolide antibiotic; lincosamide antibiotic; streptogramin antibiotic; tetracycline antibiotic"	246	139	182	304	322	374	238	245	315	221	151	202	262
+"95"	"macrolide antibiotic; monobactam; tetracycline antibiotic; aminocoumarin antibiotic"	3313	1071	548	955	625	2079	483	405	639	503	2237	595	804
+"96"	"macrolide antibiotic; penam"	2835	974	707	1026	1042	1719	682	422	993	623	1839	639	915
+"97"	"macrolide antibiotic; peptide antibiotic"	170	68	6	39	0	59	0	13	7	3	46	6	4
+"98"	"macrolide antibiotic; streptogramin antibiotic"	3918	1575	1127	1987	2658	3034	1193	986	2316	1190	2106	1236	1416
+"99"	"macrolide antibiotic; streptogramin antibiotic; streptogramin B antibiotic"	1547	464	328	459	127	1188	172	127	242	171	1064	254	460
+"100"	"macrolide antibiotic; tetracycline antibiotic; disinfecting agents and antiseptics"	6842	3521	2504	5727	5048	5535	5508	3033	5049	5050	4308	4959	5095
+"101"	"monobactam; carbapenem; cephalosporin"	5836	1715	1090	1616	905	3387	1102	552	973	783	2918	790	1265
+"102"	"monobactam; carbapenem; cephalosporin; cephamycin; penam; penem"	2111	1093	1666	1572	5223	3140	1229	1173	2604	1097	1939	1615	1262
+"103"	"monobactam; carbapenem; cephalosporin; cephamycin; penam; phenicol antibiotic; penem"	3509	1084	505	794	216	2342	293	127	336	222	1952	340	526
+"104"	"monobactam; carbapenem; cephalosporin; cephamycin; penam; tetracycline antibiotic; penem"	2	0	0	0	0	4	0	0	1	1	0	1	3
+"105"	"monobactam; carbapenem; cephalosporin; penam"	499	144	82	126	40	479	66	39	65	62	238	49	231
+"106"	"monobactam; carbapenem; cephalosporin; penam; penem"	2429	1692	3487	2860	11949	4360	2631	2084	5098	2349	2777	2537	2682
+"107"	"monobactam; carbapenem; penam"	602	198	173	488	478	438	387	227	568	341	297	348	408
+"108"	"monobactam; cephalosporin"	901	426	329	485	533	845	373	291	606	697	602	371	474
+"109"	"monobactam; cephalosporin; cephamycin; penam; penem"	804	289	157	193	106	656	58	23	114	99	313	84	133
+"110"	"monobactam; cephalosporin; penam"	4398	3355	1965	3302	3876	3772	2971	1843	5271	2938	7575	3803	2689
+"111"	"monobactam; cephalosporin; penam; penem"	2973	969	689	849	638	1762	497	333	668	462	1984	590	673
+"112"	"mupirocin-like antibiotic"	5855	2811	2034	3674	3621	4713	2440	2125	3593	2436	4796	2659	3064
+"113"	"nitrofuran antibiotic"	0	0	0	0	0	0	0	0	25	0	0	0	0
+"114"	"nitroimidazole antibiotic"	8363	5811	9847	10403	44609	14309	7567	7552	17648	8427	10579	9895	7106
+"115"	"nucleoside antibiotic"	1626	865	606	1422	1130	1444	1260	783	1321	1332	1897	1065	1439
+"116"	"nucleoside antibiotic; disinfecting agents and antiseptics"	3235	1538	1758	2277	4529	2749	1632	1183	2423	1443	1953	1599	1864
+"117"	"oxazolidinone antibiotic; phenicol antibiotic"	2106	704	686	782	1074	1390	715	357	1331	548	1188	832	805
+"118"	"penam"	19275	8936	8134	11271	19010	15075	9168	6085	12516	8402	14321	8607	12930
+"119"	"penam; penem"	326	168	112	217	258	277	217	171	226	201	336	176	266
+"120"	"penam; tetracycline antibiotic"	489	99	60	74	7	289	26	2	23	26	568	25	98
+"121"	"peptide antibiotic"	36532	12981	8307	14194	12175	23769	9274	6035	10827	8081	24163	8353	10489
+"122"	"peptide antibiotic; polyamine antibiotic"	284	61	110	115	66	266	78	52	56	55	442	60	78
+"123"	"phenicol antibiotic"	19285	8960	7314	9012	16004	14051	11057	4062	14095	10436	14411	6761	7250
+"124"	"phosphonic acid antibiotic"	9630	3170	2158	3747	2078	6622	2353	1516	2827	2429	7350	2699	3179
+"125"	"pleuromutilin antibiotic"	2303	954	955	1266	2066	2082	772	560	1374	711	2562	865	874
+"126"	"polyamine antibiotic"	41	21	29	33	82	78	63	25	73	79	36	40	73
+"127"	"pyrazine antibiotic"	583	141	90	85	21	277	35	24	39	43	397	49	61
+"128"	"rifamycin antibiotic"	17895	6759	5178	8408	6232	11955	5373	3471	7335	5159	13594	5069	7045
+"129"	"rifamycin antibiotic; isoniazid-like antibiotic"	510	207	57	119	24	390	27	24	60	32	338	62	132
+"130"	"salicylic acid antibiotic"	475	347	258	580	584	459	443	628	535	418	427	472	486
+"131"	"streptogramin antibiotic; streptogramin A antibiotic"	2791	1022	886	1529	1609	2255	1337	826	1606	1242	1896	1153	1332
+"132"	"streptogramin antibiotic; streptogramin A antibiotic; pleuromutilin antibiotic"	803	165	233	363	356	704	249	201	277	220	742	156	238
+"133"	"streptogramin antibiotic; streptogramin B antibiotic"	7346	6270	4747	10224	9682	7091	7409	6478	8715	8292	6277	7862	7110
+"134"	"sulfonamide antibiotic"	2594	808	533	753	685	1579	535	256	677	437	1279	484	583
+"135"	"sulfone antibiotic"	0	0	0	0	0	0	0	1	0	0	0	0	0
+"136"	"tetracycline antibiotic"	50086	21025	23449	26226	58837	46856	19127	13978	32357	17201	39565	19451	21768
+"137"	"tetracycline antibiotic; disinfecting agents and antiseptics"	530	152	159	207	151	356	123	54	147	130	375	202	199
+"138"	"tetracycline antibiotic; oxazolidinone antibiotic; phenicol antibiotic"	594	392	356	597	553	760	511	402	506	584	864	530	698
+"139"	"thioamide antibiotic"	727	169	78	138	4	485	22	20	45	32	213	34	44
+"140"	"zoliflodacin-like antibiotic"	2	0	0	0	0	2	0	5	0	0	15	0	5

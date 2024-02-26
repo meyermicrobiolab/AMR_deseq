@@ -5,7 +5,7 @@ date: "2023-06-06"
 output: html_document
 ---
 
-Prepare data for DeSeq2: 1. Count data should be formatted with genes in rows and samples in columns. 2. Metadata for the samples should be formatted with samples in rows and metadata in columns.
+Prepare data for DESeq2: 1. Count data should be formatted with genes in rows and samples in columns. 2. Metadata for the samples should be formatted with samples in rows and metadata in columns.
 
 
 ```{r, echo=FALSE}
@@ -43,7 +43,7 @@ write.table(meta2,"metadata_13.txt",sep="\t",col.names=NA)
 
 ```
 
-Analyze differential expression of RGI genes in untreated vs antibiotic colonies
+Summarize RGI genes by AMR Gene Family, Drug Class, and Resistance Mechanism in untreated vs antibiotic colonies; prepare data for DESeq2 analysis
 
 ```{r, echo=FALSE}
 library(dplyr)
@@ -52,6 +52,7 @@ rgi_counts[1] <- NULL
 
 #combine individual gene counts to get counts by AMR.Gene.Family
 amrfam <- rgi_counts %>% group_by(AMR.Gene.Family) %>% summarize_at(vars(AMR1A:AMR10A), sum)
+write.table(amrfam,"Untreated-vs-antibiotic_AMRgenefamily-counts.txt",sep="\t",col.names=NA)
 #format for DESeq2
 amrfam2 <- as.data.frame(amrfam)
 rownames(amrfam2) <- amrfam2[,1]
@@ -60,6 +61,7 @@ amrfam2$AMR.Gene.Family <- NULL
 
 #combine individual gene counts to get counts by Drug.Class
 drug <- rgi_counts %>% group_by(Drug.Class) %>% summarize_at(vars(AMR1A:AMR10A), sum)
+write.table(drug,"Untreated-vs-antibiotic_DrugClass-counts.txt",sep="\t",col.names=NA)
 #format for DESeq2
 drug2 <- as.data.frame(drug)
 rownames(drug2) <- drug2[,1]
@@ -68,6 +70,7 @@ drug2$Drug.Class <- NULL
 
 #combine individual gene counts to get counts by Resistance.Mechanism
 mech <- rgi_counts %>% group_by(Resistance.Mechanism) %>% summarize_at(vars(AMR1A:AMR10A), sum)
+write.table(mech,"Untreated-vs-antibiotic_ResistanceMechanism-counts.txt",sep="\t",col.names=NA)
 #format for DESeq2
 mech2 <- as.data.frame(mech)
 rownames(mech2) <- mech2[,1]
@@ -81,7 +84,6 @@ Run DESeq2 to test for differentially expressed *individual RGI genes* between c
 
 ```{r, echo=FALSE}
 library(DESeq2)
-library(ggplot2)
 
 meta <-read.table("metadata_13.txt",sep="\t",header=TRUE)
 meta$X <- NULL
@@ -118,7 +120,6 @@ Run DESeq2 to test for differentially expressed *AMR gene families* between cora
 
 ```{r, echo=FALSE}
 library(DESeq2)
-library(ggplot2)
 
 meta <-read.table("metadata_13.txt",sep="\t",header=TRUE)
 meta$X <- NULL
@@ -153,7 +154,6 @@ Run DESeq2 to test for differentially expressed *Drug Class* between coral colon
 
 ```{r, echo=FALSE}
 library(DESeq2)
-library(ggplot2)
 
 meta <-read.table("metadata_13.txt",sep="\t",header=TRUE)
 meta$X <- NULL
@@ -188,7 +188,6 @@ Run DESeq2 to test for differentially expressed *Resistance Mechanism* between c
 
 ```{r, echo=FALSE}
 library(DESeq2)
-library(ggplot2)
 
 meta <-read.table("metadata_13.txt",sep="\t",header=TRUE)
 meta$X <- NULL
@@ -216,5 +215,30 @@ sink()
 sink("DESeq2_summary_ResistanceMechanism.txt")
 print(summary(res))
 sink()
+```
+
+
+Since nothing is differentially expressed between untreated and antibiotic treated colonies, plot summary of the types of AMR genes that were expressed. I will use Resistance Mechanism since there are 11 types in this category. (Drug Class = 140 types, AMR gene families = 371 types)
+
+```{r, echo=FALSE}
+library(ggplot2)
+library(reshape2)
+
+meta <-read.table("metadata_13.txt",sep="\t",header=TRUE)
+meta$X <- NULL
+mech <-read.table("Untreated-vs-antibiotic_ResistanceMechanism-counts.txt",sep="\t",header=TRUE)
+mech$X <- NULL
+#calculate relative abundance from counts
+mech_RA <- mech[,-1]/colSums(mech[,-1]) * 100
+mech_RA$Resistance.Mechanism <- mech$Resistance.Mechanism
+
+#merge metadata and count dataframes - start by converting mech from wide to long format
+mech_long <- melt(mech_RA, id.vars=c("Resistance.Mechanism"))
+colnames(mech_long)[colnames(mech_long) == "variable"] <- "sample"
+colnames(mech_long)[colnames(mech_long) == "value"] <- "proportion"
+resist <-merge(meta, mech_long, "sample")
+
+#plot as stacked bars?
+
 ```
 
