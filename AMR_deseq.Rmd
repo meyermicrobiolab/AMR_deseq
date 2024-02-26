@@ -47,6 +47,16 @@ write.table(meta2,"metadata_13.txt",sep="\t",col.names=NA)
 
 ```
 
+```{r, echo=FALSE}
+library(dplyr)
+rgi_counts <- read.table("Untreated-vs-antibiotic_RGI-counts.txt",sep="\t",header=TRUE)
+rgi_counts[1] <- NULL
+
+
+
+
+
+```
 
 Run DeSeq2 to test for differentially expressed genes between coral colonies immediately before treatment ("untreated") and one day after amoxicillin treatment ("antibiotic").
 
