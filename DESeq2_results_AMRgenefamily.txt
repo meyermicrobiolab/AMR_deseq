@@ -1,0 +1,16 @@
+log2 fold change (MLE): type untreated vs antibiotic 
+Wald test p-value: type untreated vs antibiotic 
+DataFrame with 371 rows and 6 columns
+                                            baseMean log2FoldChange     lfcSE      stat    pvalue      padj
+                                           <numeric>      <numeric> <numeric> <numeric> <numeric> <numeric>
+16S rRNA methyltransferase (A1408)           84.7417     -0.1450959  0.544448 -0.266501  0.789853  0.990673
+16S rRNA methyltransferase (G1405)         2206.6759      0.0838075  0.224354  0.373550  0.708739  0.990673
+AAC(2')                                    1596.6653      0.4897690  0.344840  1.420280  0.155526  0.990673
+AAC(3)                                     2529.9589      0.1131186  0.209615  0.539650  0.589438  0.990673
+AAC(3); AAC(6')                              43.3056      0.1003938  0.876200  0.114579  0.908779  0.990673
+...                                              ...            ...       ...       ...       ...       ...
+vanX; glycopeptide resistance gene cluster  407.0639     -0.1738191  0.376524 -0.461641  0.644339  0.990673
+vanY; glycopeptide resistance gene cluster  432.7849      0.1403065  0.198224  0.707818  0.479058  0.990673
+vanZ; glycopeptide resistance gene cluster   66.8328      0.0580439  0.344110  0.168678  0.866050  0.990673
+vga-type ABC-F protein                     2858.8419      0.2287174  0.237361  0.963585  0.335254  0.990673
+viomycin phosphotransferase                 158.8132     -0.1432585  0.436531 -0.328175  0.742779  0.990673

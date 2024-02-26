@@ -5,10 +5,6 @@ date: "2023-06-06"
 output: html_document
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
-
 Prepare data for DeSeq2: 1. Count data should be formatted with genes in rows and samples in columns. 2. Metadata for the samples should be formatted with samples in rows and metadata in columns.
 
 
@@ -22,7 +18,6 @@ rownames(mat) <- counts[,1]
 # The Salmon counts have decimal places - round them up to prevent issues in deseq
 counts2<-round(mat,digits=0)
 
-
 # remove the disease samples from this analysis
 counts2$AMR1D <- NULL
 counts2$AMR2D <- NULL
@@ -32,9 +27,10 @@ counts2$AMR7D <- NULL
 counts2$AMR8D <- NULL
 counts2$AMR9D <- NULL
 
-counts3 <-counts2[rowSums(counts2[])>0,]
+counts3 <-counts2[rowSums(counts2[])>0,] # remove empty rows
+# use counts3 as input for DESeq2 
 counts4 <- counts3
-counts4$row_names <- row.names(counts4)
+counts4$row_names <- row.names(counts4) # add back transcript.id as a column to merge with metadata
 colnames(counts4)[14] <- 'transcript_id'
 rgi <- read.table("rgi_out.txt",sep="\t",header=TRUE,quote="")
 rgi_counts <-merge(rgi,counts4,by="transcript_id")
@@ -47,27 +43,55 @@ write.table(meta2,"metadata_13.txt",sep="\t",col.names=NA)
 
 ```
 
+Analyze differential expression of RGI genes in untreated vs antibiotic colonies
+
 ```{r, echo=FALSE}
 library(dplyr)
 rgi_counts <- read.table("Untreated-vs-antibiotic_RGI-counts.txt",sep="\t",header=TRUE)
 rgi_counts[1] <- NULL
 
+#combine individual gene counts to get counts by AMR.Gene.Family
+amrfam <- rgi_counts %>% group_by(AMR.Gene.Family) %>% summarize_at(vars(AMR1A:AMR10A), sum)
+#format for DESeq2
+amrfam2 <- as.data.frame(amrfam)
+rownames(amrfam2) <- amrfam2[,1]
+amrfam2$AMR.Gene.Family <- NULL
+# use amrfam2 as input for DESeq2
 
+#combine individual gene counts to get counts by Drug.Class
+drug <- rgi_counts %>% group_by(Drug.Class) %>% summarize_at(vars(AMR1A:AMR10A), sum)
+#format for DESeq2
+drug2 <- as.data.frame(drug)
+rownames(drug2) <- drug2[,1]
+drug2$Drug.Class <- NULL
+# use drug2 as input for DESeq2
 
-
+#combine individual gene counts to get counts by Resistance.Mechanism
+mech <- rgi_counts %>% group_by(Resistance.Mechanism) %>% summarize_at(vars(AMR1A:AMR10A), sum)
+#format for DESeq2
+mech2 <- as.data.frame(mech)
+rownames(mech2) <- mech2[,1]
+mech2$Resistance.Mechanism <- NULL
+# use mech2 as input for DESeq2
 
 ```
 
-Run DeSeq2 to test for differentially expressed genes between coral colonies immediately before treatment ("untreated") and one day after amoxicillin treatment ("antibiotic").
+Run DESeq2 to test for differentially expressed *individual RGI genes* between coral colonies immediately before treatment ("untreated") and one day after amoxicillin treatment ("antibiotic").
 
 
 ```{r, echo=FALSE}
 library(DESeq2)
 library(ggplot2)
 
+meta <-read.table("metadata_13.txt",sep="\t",header=TRUE)
+meta$X <- NULL
+meta$type <-factor(meta$type)
+
+# DESeq2 is looking for only counts, without a first column of gene names, make the gene names row names.
+# This is testing all individual RGI genes
 #construct DESEQDataSet Object
 dds <- DESeqDataSetFromMatrix(countData=counts3, 
-                              colData=meta2, 
+                              colData=meta, 
                               design=~type)
 #see what the object looks like
 dds
@@ -78,9 +102,119 @@ resultsNames(dds) # lists the coefficients
 res <- results(dds, name="type_untreated_vs_antibiotic")
 summary(res)
 
-sink("DESeq2_results.txt")
+sink("DESeq2_summary_transcriptid.txt")
+print(summary(res))
+sink()
+
+sink("DESeq2_results_transcriptid.txt")
 print(res)
 sink()
 
+```
+
+
+Run DESeq2 to test for differentially expressed *AMR gene families* between coral colonies immediately before treatment ("untreated") and one day after amoxicillin treatment ("antibiotic").
+
+
+```{r, echo=FALSE}
+library(DESeq2)
+library(ggplot2)
+
+meta <-read.table("metadata_13.txt",sep="\t",header=TRUE)
+meta$X <- NULL
+meta$type <-factor(meta$type)
+
+# DESeq2 is looking for only counts, without a first column of gene names, make the gene names row names.
+# This is testing differential expression of AMR gene families
+#construct DESEQDataSet Object
+dds <- DESeqDataSetFromMatrix(countData=amrfam2, 
+                              colData=meta, 
+                              design=~type)
+#see what the object looks like
+dds
+
+#now run DESeq function
+dds <- DESeq(dds)
+resultsNames(dds) # lists the coefficients
+res <- results(dds, name="type_untreated_vs_antibiotic")
+summary(res)
+
+sink("DESeq2_results_AMRgenefamily.txt")
+print(res)
+sink()
+
+sink("DESeq2_summary_AMRgenefamily.txt")
+print(summary(res))
+sink()
+```
+
+Run DESeq2 to test for differentially expressed *Drug Class* between coral colonies immediately before treatment ("untreated") and one day after amoxicillin treatment ("antibiotic").
+
+
+```{r, echo=FALSE}
+library(DESeq2)
+library(ggplot2)
+
+meta <-read.table("metadata_13.txt",sep="\t",header=TRUE)
+meta$X <- NULL
+meta$type <-factor(meta$type)
+
+# DESeq2 is looking for only counts, without a first column of gene names, make the gene names row names.
+# This is testing differential expression of AMR gene families
+#construct DESEQDataSet Object
+dds <- DESeqDataSetFromMatrix(countData=drug2, 
+                              colData=meta, 
+                              design=~type)
+#see what the object looks like
+dds
+
+#now run DESeq function
+dds <- DESeq(dds)
+resultsNames(dds) # lists the coefficients
+res <- results(dds, name="type_untreated_vs_antibiotic")
+summary(res)
+
+sink("DESeq2_results_DrugClass.txt")
+print(res)
+sink()
+
+sink("DESeq2_summary_DrugClass.txt")
+print(summary(res))
+sink()
+```
+
+Run DESeq2 to test for differentially expressed *Resistance Mechanism* between coral colonies immediately before treatment ("untreated") and one day after amoxicillin treatment ("antibiotic").
+
+
+```{r, echo=FALSE}
+library(DESeq2)
+library(ggplot2)
+
+meta <-read.table("metadata_13.txt",sep="\t",header=TRUE)
+meta$X <- NULL
+meta$type <-factor(meta$type)
+
+# DESeq2 is looking for only counts, without a first column of gene names, make the gene names row names.
+# This is testing differential expression of AMR gene families
+#construct DESEQDataSet Object
+dds <- DESeqDataSetFromMatrix(countData=mech2, 
+                              colData=meta, 
+                              design=~type)
+#see what the object looks like
+dds
+
+#now run DESeq function
+dds <- DESeq(dds)
+resultsNames(dds) # lists the coefficients
+res <- results(dds, name="type_untreated_vs_antibiotic")
+summary(res)
+
+sink("DESeq2_results_ResistanceMechanism.txt")
+print(res)
+sink()
+
+sink("DESeq2_summary_ResistanceMechanism.txt")
+print(summary(res))
+sink()
 ```
 
