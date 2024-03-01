@@ -237,11 +237,35 @@ mech_long <- melt(mech_RA, id.vars=c("Resistance.Mechanism"))
 colnames(mech_long)[colnames(mech_long) == "variable"] <- "sample"
 colnames(mech_long)[colnames(mech_long) == "value"] <- "proportion"
 resist <-merge(meta, mech_long, "sample")
+write.table(resist,"Untreated-vs-antibiotic_ResistanceMechanism-RA_combine_other.txt",sep="\t",col.names=NA)
+
+
+#in excel, I changed categories with multiple mechanisms listed into "other" to reduce total number of displayed categories (and get rid of super long names in legend that prevented successful plotting)
+other <-read.table("Untreated-vs-antibiotic_ResistanceMechanism-RA_combine_other.txt",sep="\t",header=TRUE)
+other$Resistance.Mechanism <-factor(other$Resistance.Mechanism, levels = c("antibiotic efflux","antibiotic inactivation","antibiotic target alteration","antibiotic target protection","antibiotic target replacement","reduced permeability to antibiotic","other"))
+mycolors <-c("antibiotic efflux"="#E69F00","antibiotic inactivation"="#D55E00","antibiotic target alteration"="#56B4E9","antibiotic target protection"="#0072B2","antibiotic target replacement"="#009E73","reduced permeability to antibiotic"="#CC79A7","other"="#999999")
 
 #plot as stacked bars
-ggplot(resist, aes(fill=Resistance.Mechanism, x=sample, y=proportion)) +geom_bar(position="fill",stat="identity")+facet_grid(. ~ type, scales="free", space="free")
-# to do: black and white theme, better fill colors, 90 degree shift of x-axis labels
-# reduce hybrid categories to "other"
+pdf("resistance_mechanisms.pdf", height=4)
+p1<-ggplot(other, aes(fill=Resistance.Mechanism, x=sample, y=proportion))+
+  geom_bar(position="fill",stat="identity")+
+  facet_grid(. ~ type, scales="free", space="free")+
+  theme_bw()+
+  theme(axis.text.x=element_text(angle=90))+
+  scale_fill_manual(values=mycolors)
+p1
+dev.off()
+
+
+pdf("resistance_mechanisms_v2.pdf", height=4)
+p1<-ggplot(other, aes(fill=Resistance.Mechanism, x=sample, y=proportion))+
+  geom_bar(position="fill",stat="identity")+
+  facet_grid(. ~ colony, scales="free", space="free")+
+  theme_bw()+
+  theme(axis.text.x=element_text(angle=90))+
+  scale_fill_manual(values=mycolors)
+p1
+dev.off()
 
 ```
 
