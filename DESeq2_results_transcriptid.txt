@@ -1,5 +1,5 @@
-log2 fold change (MLE): type untreated vs antibiotic 
-Wald test p-value: type untreated vs antibiotic 
+log2 fold change (MLE): type before vs after 
+Wald test p-value: type before vs after 
 DataFrame with 52254 rows and 6 columns
                 baseMean log2FoldChange     lfcSE       stat    pvalue      padj
                <numeric>      <numeric> <numeric>  <numeric> <numeric> <numeric>

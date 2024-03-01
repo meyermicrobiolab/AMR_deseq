@@ -1,144 +1,144 @@
 sample	type	colony	Resistance.Mechanism	proportion
-AMR10A	antibiotic	10	antibiotic efflux	66.69006562
-AMR1A	antibiotic	1	antibiotic efflux	32.74808122
-AMR1H	untreated	1	antibiotic efflux	28.66282113
-AMR2A	antibiotic	2	antibiotic efflux	29.70691399
-AMR3A	antibiotic	3	antibiotic efflux	57.52211379
-AMR3H	untreated	3	antibiotic efflux	76.22223171
-AMR4A	antibiotic	4	antibiotic efflux	59.6537005
-AMR5A	antibiotic	5	antibiotic efflux	40.88748429
-AMR5H	untreated	5	antibiotic efflux	21.30161469
-AMR6A	antibiotic	6	antibiotic efflux	37.52736688
-AMR7A	antibiotic	7	antibiotic efflux	31.18033445
-AMR7H	untreated	7	antibiotic efflux	59.86633073
-AMR9H	untreated	9	antibiotic efflux	16.2721629
-AMR10A	antibiotic	10	other	0.165488256
-AMR1A	antibiotic	1	other	0.994688667
-AMR1H	untreated	1	other	0.193668513
-AMR2A	antibiotic	2	other	0.081277437
-AMR3A	antibiotic	3	other	0.155447194
-AMR3H	untreated	3	other	0.104230208
-AMR4A	antibiotic	4	other	0.200273392
-AMR5A	antibiotic	5	other	0.111704563
-AMR5H	untreated	5	other	0.035912906
-AMR6A	antibiotic	6	other	0.09185995
-AMR7A	antibiotic	7	other	0.08781509
-AMR7H	untreated	7	other	0.682825084
-AMR9H	untreated	9	other	0.050520144
-AMR10A	antibiotic	10	antibiotic inactivation	16.72312957
-AMR1A	antibiotic	1	antibiotic inactivation	101.4881734
-AMR1H	untreated	1	antibiotic inactivation	19.78236779
-AMR2A	antibiotic	2	antibiotic inactivation	37.04070025
-AMR3A	antibiotic	3	antibiotic inactivation	52.18556411
-AMR3H	untreated	3	antibiotic inactivation	131.2146979
-AMR4A	antibiotic	4	antibiotic inactivation	40.1955343
-AMR5A	antibiotic	5	antibiotic inactivation	35.82864523
-AMR5H	untreated	5	antibiotic inactivation	32.39309038
-AMR6A	antibiotic	6	antibiotic inactivation	51.99305612
-AMR7A	antibiotic	7	antibiotic inactivation	24.66529277
-AMR7H	untreated	7	antibiotic inactivation	44.2098101
-AMR9H	untreated	9	antibiotic inactivation	43.20779737
-AMR10A	antibiotic	10	antibiotic target alteration	7.199191678
-AMR1A	antibiotic	1	antibiotic target alteration	24.61637808
-AMR1H	untreated	1	antibiotic target alteration	13.66366928
-AMR2A	antibiotic	2	antibiotic target alteration	7.743751148
-AMR3A	antibiotic	3	antibiotic target alteration	9.70237359
-AMR3H	untreated	3	antibiotic target alteration	11.81974406
-AMR4A	antibiotic	4	antibiotic target alteration	22.3959687
-AMR5A	antibiotic	5	antibiotic target alteration	4.485661972
-AMR5H	untreated	5	antibiotic target alteration	9.678010072
-AMR6A	antibiotic	6	antibiotic target alteration	7.297887295
-AMR7A	antibiotic	7	antibiotic target alteration	10.22212491
-AMR7H	untreated	7	antibiotic target alteration	20.7183224
-AMR9H	untreated	9	antibiotic target alteration	16.50807667
-AMR10A	antibiotic	10	other	0.558811829
-AMR1A	antibiotic	1	other	0.425254535
-AMR1H	untreated	1	other	0.471539753
-AMR2A	antibiotic	2	other	0.181488436
-AMR3A	antibiotic	3	other	0.541092857
-AMR3H	untreated	3	other	0.512548248
-AMR4A	antibiotic	4	other	1.257555227
-AMR5A	antibiotic	5	other	0.210761502
-AMR5H	untreated	5	other	0.214959613
-AMR6A	antibiotic	6	other	0.560464936
-AMR7A	antibiotic	7	other	0.300218224
-AMR7H	untreated	7	other	0.509509942
-AMR9H	untreated	9	other	0.258206338
-AMR10A	antibiotic	10	other	0.064704718
-AMR1A	antibiotic	1	other	0.135906303
-AMR1H	untreated	1	other	0.060416347
-AMR2A	antibiotic	2	other	0.029619235
-AMR3A	antibiotic	3	other	0.046548772
-AMR3H	untreated	3	other	0.000963764
-AMR4A	antibiotic	4	other	0.116367316
-AMR5A	antibiotic	5	other	0.011934757
-AMR5H	untreated	5	other	0.001305694
-AMR6A	antibiotic	6	other	0.015260186
-AMR7A	antibiotic	7	other	0.00692606
-AMR7H	untreated	7	other	0.083806475
-AMR9H	untreated	9	other	0.021639249
-AMR10A	antibiotic	10	other	0.000697855
-AMR1A	antibiotic	1	other	0.045086859
-AMR1H	untreated	1	other	0.006829785
-AMR2A	antibiotic	2	other	0.001831222
-AMR3A	antibiotic	3	other	0.005002155
-AMR3H	untreated	3	other	0
-AMR4A	antibiotic	4	other	0.014845531
-AMR5A	antibiotic	5	other	0
-AMR5H	untreated	5	other	0.001850033
-AMR6A	antibiotic	6	other	0.001532299
-AMR7A	antibiotic	7	other	0.000862696
-AMR7H	untreated	7	other	0.009822218
-AMR9H	untreated	9	other	0.000963764
-AMR10A	antibiotic	10	other	0.230986397
-AMR1A	antibiotic	1	other	1.913737192
-AMR1H	untreated	1	other	0.206919125
-AMR2A	antibiotic	2	other	0.187597137
-AMR3A	antibiotic	3	other	0.368946389
-AMR3H	untreated	3	other	0.164415386
-AMR4A	antibiotic	4	other	0.492644071
-AMR5A	antibiotic	5	other	0.118111953
-AMR5H	untreated	5	other	0.068160721
-AMR6A	antibiotic	6	other	0.077136392
-AMR7A	antibiotic	7	other	0.189226309
-AMR7H	untreated	7	other	0.356307332
-AMR9H	untreated	9	other	0.18145486
-AMR10A	antibiotic	10	antibiotic target protection	3.318882226
-AMR1A	antibiotic	1	antibiotic target protection	8.054642044
-AMR1H	untreated	1	antibiotic target protection	5.363744861
-AMR2A	antibiotic	2	antibiotic target protection	1.715581652
-AMR3A	antibiotic	3	antibiotic target protection	7.28032962
-AMR3H	untreated	3	antibiotic target protection	4.084451764
-AMR4A	antibiotic	4	antibiotic target protection	9.811901023
-AMR5A	antibiotic	5	antibiotic target protection	4.283564739
-AMR5H	untreated	5	antibiotic target protection	4.68386036
-AMR6A	antibiotic	6	antibiotic target protection	3.821742162
-AMR7A	antibiotic	7	antibiotic target protection	3.449860999
-AMR7H	untreated	7	antibiotic target protection	11.08305751
-AMR9H	untreated	9	antibiotic target protection	4.141345985
-AMR10A	antibiotic	10	antibiotic target replacement	1.481839414
-AMR1A	antibiotic	1	antibiotic target replacement	3.5624242
-AMR1H	untreated	1	antibiotic target replacement	2.019548437
-AMR2A	antibiotic	2	antibiotic target replacement	0.552448448
-AMR3A	antibiotic	3	antibiotic target replacement	1.434669352
-AMR3H	untreated	3	antibiotic target replacement	1.898794238
-AMR4A	antibiotic	4	antibiotic target replacement	2.148716919
-AMR5A	antibiotic	5	antibiotic target replacement	0.794141599
-AMR5H	untreated	5	antibiotic target replacement	0.528276211
-AMR6A	antibiotic	6	antibiotic target replacement	1.516509747
-AMR7A	antibiotic	7	antibiotic target replacement	0.456089004
-AMR7H	untreated	7	antibiotic target replacement	3.289790935
-AMR9H	untreated	9	antibiotic target replacement	0.60256726
-AMR10A	antibiotic	10	reduced permeability to antibiotic	0.474242301
-AMR1A	antibiotic	1	reduced permeability to antibiotic	0.833013417
-AMR1H	untreated	1	reduced permeability to antibiotic	0.405802664
-AMR2A	antibiotic	2	reduced permeability to antibiotic	0.607876939
-AMR3A	antibiotic	3	reduced permeability to antibiotic	0.29227461
-AMR3H	untreated	3	reduced permeability to antibiotic	1.79673432
-AMR4A	antibiotic	4	reduced permeability to antibiotic	0.659130087
-AMR5A	antibiotic	5	reduced permeability to antibiotic	0.501077152
-AMR5H	untreated	5	reduced permeability to antibiotic	0.436810878
-AMR6A	antibiotic	6	reduced permeability to antibiotic	1.311983314
-AMR7A	antibiotic	7	reduced permeability to antibiotic	0.256016166
-AMR7H	untreated	7	reduced permeability to antibiotic	0.798108706
-AMR9H	untreated	9	reduced permeability to antibiotic	0.662550647
+AMR10A	after	I	antibiotic efflux	66.69006562
+AMR1A	after	A	antibiotic efflux	32.74808122
+AMR1H	before	A	antibiotic efflux	28.66282113
+AMR2A	after	B	antibiotic efflux	29.70691399
+AMR3A	after	C	antibiotic efflux	57.52211379
+AMR3H	before	C	antibiotic efflux	76.22223171
+AMR4A	after	D	antibiotic efflux	59.6537005
+AMR5A	after	E	antibiotic efflux	40.88748429
+AMR5H	before	E	antibiotic efflux	21.30161469
+AMR6A	after	F	antibiotic efflux	37.52736688
+AMR7A	after	G	antibiotic efflux	31.18033445
+AMR7H	before	G	antibiotic efflux	59.86633073
+AMR9H	before	H	antibiotic efflux	16.2721629
+AMR10A	after	I	other	0.165488256
+AMR1A	after	A	other	0.994688667
+AMR1H	before	A	other	0.193668513
+AMR2A	after	B	other	0.081277437
+AMR3A	after	C	other	0.155447194
+AMR3H	before	C	other	0.104230208
+AMR4A	after	D	other	0.200273392
+AMR5A	after	E	other	0.111704563
+AMR5H	before	E	other	0.035912906
+AMR6A	after	F	other	0.09185995
+AMR7A	after	G	other	0.08781509
+AMR7H	before	G	other	0.682825084
+AMR9H	before	H	other	0.050520144
+AMR10A	after	I	antibiotic inactivation	16.72312957
+AMR1A	after	A	antibiotic inactivation	101.4881734
+AMR1H	before	A	antibiotic inactivation	19.78236779
+AMR2A	after	B	antibiotic inactivation	37.04070025
+AMR3A	after	C	antibiotic inactivation	52.18556411
+AMR3H	before	C	antibiotic inactivation	131.2146979
+AMR4A	after	D	antibiotic inactivation	40.1955343
+AMR5A	after	E	antibiotic inactivation	35.82864523
+AMR5H	before	E	antibiotic inactivation	32.39309038
+AMR6A	after	F	antibiotic inactivation	51.99305612
+AMR7A	after	G	antibiotic inactivation	24.66529277
+AMR7H	before	G	antibiotic inactivation	44.2098101
+AMR9H	before	H	antibiotic inactivation	43.20779737
+AMR10A	after	I	antibiotic target alteration	7.199191678
+AMR1A	after	A	antibiotic target alteration	24.61637808
+AMR1H	before	A	antibiotic target alteration	13.66366928
+AMR2A	after	B	antibiotic target alteration	7.743751148
+AMR3A	after	C	antibiotic target alteration	9.70237359
+AMR3H	before	C	antibiotic target alteration	11.81974406
+AMR4A	after	D	antibiotic target alteration	22.3959687
+AMR5A	after	E	antibiotic target alteration	4.485661972
+AMR5H	before	E	antibiotic target alteration	9.678010072
+AMR6A	after	F	antibiotic target alteration	7.297887295
+AMR7A	after	G	antibiotic target alteration	10.22212491
+AMR7H	before	G	antibiotic target alteration	20.7183224
+AMR9H	before	H	antibiotic target alteration	16.50807667
+AMR10A	after	I	other	0.558811829
+AMR1A	after	A	other	0.425254535
+AMR1H	before	A	other	0.471539753
+AMR2A	after	B	other	0.181488436
+AMR3A	after	C	other	0.541092857
+AMR3H	before	C	other	0.512548248
+AMR4A	after	D	other	1.257555227
+AMR5A	after	E	other	0.210761502
+AMR5H	before	E	other	0.214959613
+AMR6A	after	F	other	0.560464936
+AMR7A	after	G	other	0.300218224
+AMR7H	before	G	other	0.509509942
+AMR9H	before	H	other	0.258206338
+AMR10A	after	I	other	0.064704718
+AMR1A	after	A	other	0.135906303
+AMR1H	before	A	other	0.060416347
+AMR2A	after	B	other	0.029619235
+AMR3A	after	C	other	0.046548772
+AMR3H	before	C	other	0.000963764
+AMR4A	after	D	other	0.116367316
+AMR5A	after	E	other	0.011934757
+AMR5H	before	E	other	0.001305694
+AMR6A	after	F	other	0.015260186
+AMR7A	after	G	other	0.00692606
+AMR7H	before	G	other	0.083806475
+AMR9H	before	H	other	0.021639249
+AMR10A	after	I	other	0.000697855
+AMR1A	after	A	other	0.045086859
+AMR1H	before	A	other	0.006829785
+AMR2A	after	B	other	0.001831222
+AMR3A	after	C	other	0.005002155
+AMR3H	before	C	other	0
+AMR4A	after	D	other	0.014845531
+AMR5A	after	E	other	0
+AMR5H	before	E	other	0.001850033
+AMR6A	after	F	other	0.001532299
+AMR7A	after	G	other	0.000862696
+AMR7H	before	G	other	0.009822218
+AMR9H	before	H	other	0.000963764
+AMR10A	after	I	other	0.230986397
+AMR1A	after	A	other	1.913737192
+AMR1H	before	A	other	0.206919125
+AMR2A	after	B	other	0.187597137
+AMR3A	after	C	other	0.368946389
+AMR3H	before	C	other	0.164415386
+AMR4A	after	D	other	0.492644071
+AMR5A	after	E	other	0.118111953
+AMR5H	before	E	other	0.068160721
+AMR6A	after	F	other	0.077136392
+AMR7A	after	G	other	0.189226309
+AMR7H	before	G	other	0.356307332
+AMR9H	before	H	other	0.18145486
+AMR10A	after	I	antibiotic target protection	3.318882226
+AMR1A	after	A	antibiotic target protection	8.054642044
+AMR1H	before	A	antibiotic target protection	5.363744861
+AMR2A	after	B	antibiotic target protection	1.715581652
+AMR3A	after	C	antibiotic target protection	7.28032962
+AMR3H	before	C	antibiotic target protection	4.084451764
+AMR4A	after	D	antibiotic target protection	9.811901023
+AMR5A	after	E	antibiotic target protection	4.283564739
+AMR5H	before	E	antibiotic target protection	4.68386036
+AMR6A	after	F	antibiotic target protection	3.821742162
+AMR7A	after	G	antibiotic target protection	3.449860999
+AMR7H	before	G	antibiotic target protection	11.08305751
+AMR9H	before	H	antibiotic target protection	4.141345985
+AMR10A	after	I	antibiotic target replacement	1.481839414
+AMR1A	after	A	antibiotic target replacement	3.5624242
+AMR1H	before	A	antibiotic target replacement	2.019548437
+AMR2A	after	B	antibiotic target replacement	0.552448448
+AMR3A	after	C	antibiotic target replacement	1.434669352
+AMR3H	before	C	antibiotic target replacement	1.898794238
+AMR4A	after	D	antibiotic target replacement	2.148716919
+AMR5A	after	E	antibiotic target replacement	0.794141599
+AMR5H	before	E	antibiotic target replacement	0.528276211
+AMR6A	after	F	antibiotic target replacement	1.516509747
+AMR7A	after	G	antibiotic target replacement	0.456089004
+AMR7H	before	G	antibiotic target replacement	3.289790935
+AMR9H	before	H	antibiotic target replacement	0.60256726
+AMR10A	after	I	reduced permeability to antibiotic	0.474242301
+AMR1A	after	A	reduced permeability to antibiotic	0.833013417
+AMR1H	before	A	reduced permeability to antibiotic	0.405802664
+AMR2A	after	B	reduced permeability to antibiotic	0.607876939
+AMR3A	after	C	reduced permeability to antibiotic	0.29227461
+AMR3H	before	C	reduced permeability to antibiotic	1.79673432
+AMR4A	after	D	reduced permeability to antibiotic	0.659130087
+AMR5A	after	E	reduced permeability to antibiotic	0.501077152
+AMR5H	before	E	reduced permeability to antibiotic	0.436810878
+AMR6A	after	F	reduced permeability to antibiotic	1.311983314
+AMR7A	after	G	reduced permeability to antibiotic	0.256016166
+AMR7H	before	G	reduced permeability to antibiotic	0.798108706
+AMR9H	before	H	reduced permeability to antibiotic	0.662550647

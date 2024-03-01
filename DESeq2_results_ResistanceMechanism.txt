@@ -1,42 +1,16 @@
-log2 fold change (MLE): type untreated vs antibiotic 
-Wald test p-value: type untreated vs antibiotic 
+log2 fold change (MLE): type before vs after 
+Wald test p-value: type before vs after 
 DataFrame with 11 rows and 6 columns
-                                                                                       baseMean log2FoldChange
-                                                                                      <numeric>      <numeric>
-antibiotic efflux                                                                   201061.2251      0.2786027
-antibiotic efflux; reduced permeability to antibiotic                                  763.8775     -0.2204238
-antibiotic inactivation                                                             201549.3880      0.1030484
-antibiotic target alteration                                                         54939.8738      0.0394126
-antibiotic target alteration; antibiotic efflux                                       1939.4621     -0.1133408
-antibiotic target alteration; antibiotic efflux; reduced permeability to antibiotic    170.1219     -0.5545305
-antibiotic target alteration; antibiotic efflux; resistance by absence                  24.1271      0.3434208
-antibiotic target alteration; antibiotic target replacement                           1191.1592     -0.2067911
-antibiotic target protection                                                         23532.2929      0.0954577
-antibiotic target replacement                                                         6078.7301     -0.0183158
-reduced permeability to antibiotic                                                    2959.3746      0.2243473
-                                                                                        lfcSE      stat    pvalue
-                                                                                    <numeric> <numeric> <numeric>
-antibiotic efflux                                                                   0.2970775  0.937812 0.3483413
-antibiotic efflux; reduced permeability to antibiotic                               0.4001339 -0.550875 0.5817193
-antibiotic inactivation                                                             0.1579262  0.652510 0.5140723
-antibiotic target alteration                                                        0.0664673  0.592962 0.5532063
-antibiotic target alteration; antibiotic efflux                                     0.0503960 -2.249004 0.0245122
-antibiotic target alteration; antibiotic efflux; reduced permeability to antibiotic 0.7805519 -0.710434 0.4774351
-antibiotic target alteration; antibiotic efflux; resistance by absence              1.1863471  0.289478 0.7722160
-antibiotic target alteration; antibiotic target replacement                         0.3622019 -0.570928 0.5680487
-antibiotic target protection                                                        0.0605281  1.577081 0.1147770
-antibiotic target replacement                                                       0.0705784 -0.259510 0.7952417
-reduced permeability to antibiotic                                                  0.1826461  1.228317 0.2193282
-                                                                                         padj
-                                                                                    <numeric>
-antibiotic efflux                                                                    0.710990
-antibiotic efflux; reduced permeability to antibiotic                                0.710990
-antibiotic inactivation                                                              0.710990
-antibiotic target alteration                                                         0.710990
-antibiotic target alteration; antibiotic efflux                                      0.269635
-antibiotic target alteration; antibiotic efflux; reduced permeability to antibiotic  0.710990
-antibiotic target alteration; antibiotic efflux; resistance by absence               0.795242
-antibiotic target alteration; antibiotic target replacement                          0.710990
-antibiotic target protection                                                         0.631273
-antibiotic target replacement                                                        0.795242
-reduced permeability to antibiotic                                                   0.710990
+                                                                                       baseMean log2FoldChange     lfcSE      stat    pvalue      padj
+                                                                                      <numeric>      <numeric> <numeric> <numeric> <numeric> <numeric>
+antibiotic efflux                                                                   201061.2251      0.2786027 0.2970775  0.937812 0.3483413  0.710990
+antibiotic efflux; reduced permeability to antibiotic                                  763.8775     -0.2204238 0.4001339 -0.550875 0.5817193  0.710990
+antibiotic inactivation                                                             201549.3880      0.1030484 0.1579262  0.652510 0.5140723  0.710990
+antibiotic target alteration                                                         54939.8738      0.0394126 0.0664673  0.592962 0.5532063  0.710990
+antibiotic target alteration; antibiotic efflux                                       1939.4621     -0.1133408 0.0503960 -2.249004 0.0245122  0.269635
+antibiotic target alteration; antibiotic efflux; reduced permeability to antibiotic    170.1219     -0.5545305 0.7805519 -0.710434 0.4774351  0.710990
+antibiotic target alteration; antibiotic efflux; resistance by absence                  24.1271      0.3434208 1.1863471  0.289478 0.7722160  0.795242
+antibiotic target alteration; antibiotic target replacement                           1191.1592     -0.2067911 0.3622019 -0.570928 0.5680487  0.710990
+antibiotic target protection                                                         23532.2929      0.0954577 0.0605281  1.577081 0.1147770  0.631273
+antibiotic target replacement                                                         6078.7301     -0.0183158 0.0705784 -0.259510 0.7952417  0.795242
+reduced permeability to antibiotic                                                    2959.3746      0.2243473 0.1826461  1.228317 0.2193282  0.710990

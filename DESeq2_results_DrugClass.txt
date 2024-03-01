@@ -1,29 +1,16 @@
-log2 fold change (MLE): type untreated vs antibiotic 
-Wald test p-value: type untreated vs antibiotic 
+log2 fold change (MLE): type before vs after 
+Wald test p-value: type before vs after 
 DataFrame with 140 rows and 6 columns
-                                                                           baseMean log2FoldChange     lfcSE
-                                                                          <numeric>      <numeric> <numeric>
-aminocoumarin antibiotic                                                  3315.1403      0.0324677  0.103707
-aminoglycoside antibiotic                                                30706.8506      0.0820408  0.130709
-aminoglycoside antibiotic; aminocoumarin antibiotic                       2292.4430      0.1247524  0.159051
-aminoglycoside antibiotic; cephalosporin; cephamycin; penam               1081.1730     -0.1314700  0.185721
-aminoglycoside antibiotic; tetracycline antibiotic; phenicol antibiotic     26.5749      0.1661957  0.463638
-...                                                                             ...            ...       ...
-tetracycline antibiotic                                                 27957.38082      0.2489768  0.223690
-tetracycline antibiotic; disinfecting agents and antiseptics              187.81520     -0.0816045  0.231587
-tetracycline antibiotic; oxazolidinone antibiotic; phenicol antibiotic    568.41583      0.0857758  0.265652
-thioamide antibiotic                                                      106.64754     -0.6390307  0.744873
-zoliflodacin-like antibiotic                                                1.97054      2.0030663  2.283846
-                                                                             stat    pvalue      padj
-                                                                        <numeric> <numeric> <numeric>
-aminocoumarin antibiotic                                                 0.313071  0.754227   0.95068
-aminoglycoside antibiotic                                                0.627660  0.530227   0.95068
-aminoglycoside antibiotic; aminocoumarin antibiotic                      0.784357  0.432831   0.95068
-aminoglycoside antibiotic; cephalosporin; cephamycin; penam             -0.707890  0.479013   0.95068
-aminoglycoside antibiotic; tetracycline antibiotic; phenicol antibiotic  0.358460  0.719999   0.95068
-...                                                                           ...       ...       ...
-tetracycline antibiotic                                                  1.113042  0.265690   0.95068
-tetracycline antibiotic; disinfecting agents and antiseptics            -0.352370  0.724561   0.95068
-tetracycline antibiotic; oxazolidinone antibiotic; phenicol antibiotic   0.322888  0.746780   0.95068
-thioamide antibiotic                                                    -0.857906  0.390945   0.95068
-zoliflodacin-like antibiotic                                             0.877058  0.380455   0.95068
+                                                                           baseMean log2FoldChange     lfcSE      stat    pvalue      padj
+                                                                          <numeric>      <numeric> <numeric> <numeric> <numeric> <numeric>
+aminocoumarin antibiotic                                                  3315.1403      0.0324677  0.103707  0.313071  0.754227   0.95068
+aminoglycoside antibiotic                                                30706.8506      0.0820408  0.130709  0.627660  0.530227   0.95068
+aminoglycoside antibiotic; aminocoumarin antibiotic                       2292.4430      0.1247524  0.159051  0.784357  0.432831   0.95068
+aminoglycoside antibiotic; cephalosporin; cephamycin; penam               1081.1730     -0.1314700  0.185721 -0.707890  0.479013   0.95068
+aminoglycoside antibiotic; tetracycline antibiotic; phenicol antibiotic     26.5749      0.1661957  0.463638  0.358460  0.719999   0.95068
+...                                                                             ...            ...       ...       ...       ...       ...
+tetracycline antibiotic                                                 27957.38082      0.2489768  0.223690  1.113042  0.265690   0.95068
+tetracycline antibiotic; disinfecting agents and antiseptics              187.81520     -0.0816045  0.231587 -0.352370  0.724561   0.95068
+tetracycline antibiotic; oxazolidinone antibiotic; phenicol antibiotic    568.41583      0.0857758  0.265652  0.322888  0.746780   0.95068
+thioamide antibiotic                                                      106.64754     -0.6390307  0.744873 -0.857906  0.390945   0.95068
+zoliflodacin-like antibiotic                                                1.97054      2.0030663  2.283846  0.877058  0.380455   0.95068
