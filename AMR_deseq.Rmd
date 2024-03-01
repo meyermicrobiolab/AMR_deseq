@@ -229,7 +229,7 @@ meta$X <- NULL
 mech <-read.table("Untreated-vs-antibiotic_ResistanceMechanism-counts.txt",sep="\t",header=TRUE)
 mech$X <- NULL
 #calculate relative abundance from counts
-mech_RA <- mech[-1,]/colSums(mech[,-1]) * 100
+mech_RA <- mech[,-1]/colSums(mech[,-1]) * 100
 mech_RA$Resistance.Mechanism <- mech$Resistance.Mechanism
 
 #merge metadata and count dataframes - start by converting mech from wide to long format
@@ -240,7 +240,57 @@ resist <-merge(meta, mech_long, "sample")
 
 #plot as stacked bars
 ggplot(resist, aes(fill=Resistance.Mechanism, x=sample, y=proportion)) +geom_bar(position="fill",stat="identity")+facet_grid(. ~ type, scales="free", space="free")
-# to do: better colors, 90 degree shift of x-axis labels
+# to do: black and white theme, better fill colors, 90 degree shift of x-axis labels
+# reduce hybrid categories to "other"
+
+```
+
+Plot just the beta-lactamases from resistance mechanism "antibiotic inactivation"
+
+
+```{r, echo=FALSE}
+library(dplyr)
+library(ggplot2)
+rgi_counts <- read.table("Untreated-vs-antibiotic_RGI-counts.txt",sep="\t",header=TRUE)
+rgi_counts[1] <- NULL
+
+#subset = just "antibiotic inactivation" which includes beta-lactamases
+inact <- rgi_counts[which(rgi_counts$Resistance.Mechanism=='antibiotic inactivation'),]
+
+inact2 <- inact %>% group_by(AMR.Gene.Family) %>% summarize_at(vars(AMR1A:AMR10A), sum)
+write.table(inact2,"Untreated-vs-antibiotic_AntibioticInactivation-counts.txt",sep="\t",col.names=NA)
+#calculate relative abundance from counts
+inact2_RA <- inact2[,-1]/colSums(inact2[,-1]) * 100
+inact2_RA$AMR.Gene.Family <- inact2$AMR.Gene.Family
+inact3 = inact2_RA[, c("AMR.Gene.Family", names(inact2_RA)[names(inact2_RA) != "AMR.Gene.Family"])]
+write.table(inact3,"Untreated-vs-antibiotic_AntibioticInactivation-RA.txt",sep="\t",col.names=NA)
+
+#create a sum column to find most abundant inactivation gene families then sort by abundance before plotting
+inact3$total <- rowSums(inact3[,2:14])
+inact4 <- inact3[order(inact3$total, decreasing = TRUE),]
+top25 <-head(inact4, 25)
+write.table(top25,"Untreated-vs-antibiotic_AntibioticInactivation-RA_top25.txt",sep="\t",col.names=NA)
+
+
+
+#merge metadata and count dataframes - start by converting mech from wide to long format
+top25_long <- melt(top25, id.vars=c("AMR.Gene.Family"))
+colnames(top25_long)[colnames(top25_long) == "variable"] <- "sample"
+colnames(top25_long)[colnames(top25_long) == "value"] <- "proportion"
+meta <-read.table("metadata_13.txt",sep="\t",header=TRUE)
+meta$X <- NULL
+inact5 <-merge(meta, top25_long, "sample")
+
+
+#plot as stacked bars
+pdf("inactivation.pdf", height= 11, width=8.5)
+ggplot(inact5, aes(fill=AMR.Gene.Family, x=sample, y=proportion)) +geom_bar(position="fill",stat="identity")+facet_grid(. ~ type, scales="free", space="free") + theme(legend.position="bottom")
+dev.off()
+
+# to do: black and white theme, better fill colors, 90 degree shift of x-axis labels
+# reduce hybrid categories to "other"
+
+
 
 ```
 
