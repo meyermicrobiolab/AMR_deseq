@@ -256,7 +256,7 @@ p1<-ggplot(other, aes(fill=Resistance.Mechanism, x=sample, y=proportion))+
 p1
 dev.off()
 
-
+#group colonies to look at before/after
 pdf("resistance_mechanisms_v2.pdf", height=4)
 p1<-ggplot(other, aes(fill=Resistance.Mechanism, x=sample, y=proportion))+
   geom_bar(position="fill",stat="identity")+
@@ -269,7 +269,7 @@ dev.off()
 
 ```
 
-Plot just the beta-lactamases from resistance mechanism "antibiotic inactivation"
+Plot the resistance mechanism "antibiotic inactivation" which includes beta-lactamases
 
 
 ```{r, echo=FALSE}
@@ -289,12 +289,17 @@ inact2_RA$AMR.Gene.Family <- inact2$AMR.Gene.Family
 inact3 = inact2_RA[, c("AMR.Gene.Family", names(inact2_RA)[names(inact2_RA) != "AMR.Gene.Family"])]
 write.table(inact3,"Untreated-vs-antibiotic_AntibioticInactivation-RA.txt",sep="\t",col.names=NA)
 
-#create a sum column to find most abundant inactivation gene families then sort by abundance before plotting
-inact3$total <- rowSums(inact3[,2:14])
-inact4 <- inact3[order(inact3$total, decreasing = TRUE),]
-top25 <-head(inact4, 25)
+#in excel remove all rows that are not beta-lactamases 215 out of 260 inactivation gene families are beta-lactamases
+beta <- read.table("Untreated-vs-antibiotic_AntibioticInactivation-RA_v2.txt",sep="\t",header=TRUE)
+
+#create a sum column to find most abundant beta-lactamase gene families then sort by abundance before plotting
+beta$total <- rowSums(beta[,2:14])
+beta <- beta[order(beta$total, decreasing = TRUE),]
+top25 <-head(beta, 25)
 write.table(top25,"Untreated-vs-antibiotic_AntibioticInactivation-RA_top25.txt",sep="\t",col.names=NA)
 
+top10 <-head(inact4, 10)
+write.table(top10,"Untreated-vs-antibiotic_AntibioticInactivation-RA_top10.txt",sep="\t",col.names=NA)
 
 
 #merge metadata and count dataframes - start by converting mech from wide to long format
@@ -305,10 +310,35 @@ meta <-read.table("metadata_13.txt",sep="\t",header=TRUE)
 meta$X <- NULL
 inact5 <-merge(meta, top25_long, "sample")
 
+#plot as stacked bars
+#pdf("inactivation.pdf", height= 11, width=8.5)
+ggplot(inact5, aes(fill=AMR.Gene.Family, x=sample, y=proportion))+
+  geom_bar(position="fill",stat="identity")+
+  facet_grid(. ~ type, scales="free", space="free")+
+  theme(legend.position="bottom")
+#dev.off()
+
+
+#merge metadata and count dataframes - start by converting mech from wide to long format
+top10_long <- melt(top10, id.vars=c("AMR.Gene.Family"))
+colnames(top10_long)[colnames(top10_long) == "variable"] <- "sample"
+colnames(top10_long)[colnames(top10_long) == "value"] <- "proportion"
+meta <-read.table("metadata_13.txt",sep="\t",header=TRUE)
+meta$X <- NULL
+inact6 <-merge(meta, top10_long, "sample")
+
 
 #plot as stacked bars
-pdf("inactivation.pdf", height= 11, width=8.5)
-ggplot(inact5, aes(fill=AMR.Gene.Family, x=sample, y=proportion)) +geom_bar(position="fill",stat="identity")+facet_grid(. ~ type, scales="free", space="free") + theme(legend.position="bottom")
+inact6$AMR.Gene.Family <-factor(inact6$AMR.Gene.Family, levels = c("OXA beta-lactamase","nitroimidazole reductase","tetracycline inactivation enzyme","chloramphenicol acetyltransferase (CAT)","streptogramin vgb lyase","ANT(3'')","macrolide phosphotransferase (MPH)","ADC beta-lactamases pending classification for carbapenemase activity","CfiA beta-lactamase","MOX beta-lactamase"))
+
+mycolors2 <-c("antibiotic efflux"="#E69F00","antibiotic inactivation"="#D55E00","antibiotic target alteration"="#56B4E9","antibiotic target protection"="#0072B2","antibiotic target replacement"="#009E73","reduced permeability to antibiotic"="#CC79A7","other"="#999999")
+
+
+pdf("inactivation_top10.pdf")
+ggplot(inact6, aes(fill=AMR.Gene.Family, x=sample, y=proportion)) +geom_bar(position="fill",stat="identity")+facet_grid(. ~ type, scales="free", space="free")+
+  theme_bw()+
+  theme(axis.text.x=element_text(angle=90)) 
+#+ theme(legend.position="bottom")
 dev.off()
 
 # to do: black and white theme, better fill colors, 90 degree shift of x-axis labels
