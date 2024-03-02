@@ -244,6 +244,9 @@ write.table(resist,"Untreated-vs-antibiotic_ResistanceMechanism-RA_combine_other
 other <-read.table("Untreated-vs-antibiotic_ResistanceMechanism-RA_combine_other.txt",sep="\t",header=TRUE)
 other$type <-factor(other$type, levels=c("before","after"))
 other$Resistance.Mechanism <-factor(other$Resistance.Mechanism, levels = c("antibiotic efflux","antibiotic inactivation","antibiotic target alteration","antibiotic target protection","antibiotic target replacement","reduced permeability to antibiotic","other"))
+
+#color blind friendly palette from Cookbook for R: http://www.cookbook-r.com/Graphs/Colors_(ggplot2)/#a-colorblind-friendly-palette
+
 mycolors <-c("antibiotic efflux"="#E69F00","antibiotic inactivation"="#D55E00","antibiotic target alteration"="#56B4E9","antibiotic target protection"="#0072B2","antibiotic target replacement"="#009E73","reduced permeability to antibiotic"="#CC79A7","other"="#999999")
 
 #plot as stacked bars
@@ -265,7 +268,9 @@ Plot the resistance mechanism "antibiotic inactivation" which includes beta-lact
 
 ```{r, echo=FALSE}
 library(dplyr)
+library(reshape2)
 library(ggplot2)
+
 rgi_counts <- read.table("Untreated-vs-antibiotic_RGI-counts.txt",sep="\t",header=TRUE)
 rgi_counts[1] <- NULL
 
@@ -280,6 +285,64 @@ inact2_RA$AMR.Gene.Family <- inact2$AMR.Gene.Family
 inact3 = inact2_RA[, c("AMR.Gene.Family", names(inact2_RA)[names(inact2_RA) != "AMR.Gene.Family"])]
 write.table(inact3,"Untreated-vs-antibiotic_AntibioticInactivation-RA.txt",sep="\t",col.names=NA)
 
+#find the top10 antibiotic inactivation gene families
+inact3$total <- rowSums(inact3[,2:14])
+inact3 <- inact3[order(inact3$total, decreasing = TRUE),]
+top10 <-head(inact3, 10)
+write.table(top10,"Untreated-vs-antibiotic_AntibioticInactivation-RA_top10_inactivation.txt",sep="\t",col.names=NA)
+
+# R does not like the gene family name ANT(3") because of the quotation mark and I have not been able to escape the special character for plotting, so I will have to manually replace the name with ANT(3)
+# I am also going to add a row to represent the proportion of gene families other than top10
+top10<- read.table("Untreated-vs-antibiotic_AntibioticInactivation-RA_top10_inactivation.txt",sep="\t",header=TRUE)
+
+#merge metadata and count dataframes - start by converting mech from wide to long format
+top10_long <- melt(top10, id.vars=c("AMR.Gene.Family"))
+colnames(top10_long)[colnames(top10_long) == "variable"] <- "sample"
+colnames(top10_long)[colnames(top10_long) == "value"] <- "proportion"
+meta <-read.table("metadata_13.txt",sep="\t",header=TRUE)
+meta$X <- NULL
+inact_meta <-merge(meta, top10_long, "sample")
+
+#plot as stacked bars
+inact_meta$type <-factor(inact_meta$type, levels=c("before","after"))
+inact_meta$AMR.Gene.Family <-factor(inact_meta$AMR.Gene.Family, levels = c("OXA beta-lactamase","nitroimidazole reductase","tetracycline inactivation enzyme","chloramphenicol acetyltransferase (CAT)","streptogramin vgb lyase","ANT(3)","macrolide phosphotransferase (MPH)","ADC beta-lactamases pending classification for carbapenemase activity","CfiA beta-lactamase","MOX beta-lactamase","other"))
+
+#colorblind friendly palette from ggpubfigs: https://github.com/JLSteenwyk/ggpubfigs/blob/master/R/colors.R
+#muted_nine = c("#332288", "#117733", "#CC6677", "#88CCEE", "#999933", "#882255", "#44AA99", "#DDCC77", "#AA4499")
+
+mycolors2 <-c("OXA beta-lactamase"="#332288","nitroimidazole reductase"="#117733","tetracycline inactivation enzyme"="#CC6677","chloramphenicol acetyltransferase (CAT)"="#88CCEE","streptogramin vgb lyase"="#999933","ANT(3)"="#882255","macrolide phosphotransferase (MPH)"="#44AA99","ADC beta-lactamases pending classification for carbapenemase activity"="#DDCC77","CfiA beta-lactamase"="#AA4499","MOX beta-lactamase"="#999999","other"="#000000")
+
+pdf("inactivation_top10.pdf", height=4)
+p2<-ggplot(inact_meta, aes(fill=AMR.Gene.Family, x=colony, y=proportion))+
+  geom_bar(position="fill",stat="identity")+
+  facet_grid(. ~ type, scales="free", space="free")+
+  theme(strip.text.x=element_text(face="bold"))+
+  scale_fill_manual(values = mycolors2)+
+  #theme(legend.position="bottom")+
+  #guides(fill = guide_legend(nrow = 2))+
+  theme_bw()
+p2
+dev.off()
+
+
+```
+
+
+
+
+
+
+
+
+Probably won't use.
+
+
+```{r, echo=FALSE}
+library(dplyr)
+library(reshape2)
+library(ggplot2)
+
+#### look at only beta-lactamases
 #in excel remove all rows that are not beta-lactamases 215 out of 260 inactivation gene families are beta-lactamases
 beta <- read.table("Untreated-vs-antibiotic_AntibioticInactivation-RA.txt",sep="\t",header=TRUE)
 
@@ -297,20 +360,20 @@ meta <-read.table("metadata_13.txt",sep="\t",header=TRUE)
 meta$X <- NULL
 beta10_meta <-merge(meta, top10_long, "sample")
 
-
 #plot as stacked bars
 beta10_meta$type <-factor(beta10_meta$type, levels=c("before","after"))
 beta10_meta$AMR.Gene.Family <-factor(beta10_meta$AMR.Gene.Family, levels = c("OXA beta-lactamase","ADC beta-lactamases pending classification for carbapenemase activity","CfiA beta-lactamase","MOX beta-lactamase","SHV beta-lactamase","PER beta-lactamase","SPR beta-lactamase","subclass B3 PEDO beta-lactamase","GOB beta-lactamase","YRC Beta-lactamase"))
 
-mycolors2 <-c("OXA beta-lactamase"="#","ADC beta-lactamases pending classification for carbapenemase activity","CfiA beta-lactamase","MOX beta-lactamase","SHV beta-lactamase","PER beta-lactamase","SPR beta-lactamase","subclass B3 PEDO beta-lactamase","GOB beta-lactamase","YRC Beta-lactamase")
-
+mycolors2 <-c("OXA beta-lactamase"="#332288","ADC beta-lactamases pending classification for carbapenemase activity"="#117733","CfiA beta-lactamase"="#CC6677","MOX beta-lactamase"="#88CCEE","SHV beta-lactamase"="#999933","PER beta-lactamase"="#882255","SPR beta-lactamase"="#44AA99","subclass B3 PEDO beta-lactamase"="#DDCC77","GOB beta-lactamase"="#AA4499","YRC Beta-lactamase"="#999999")
 
 pdf("beta-lactamases_top10.pdf", height=4)
-p2<-ggplot(beta10_meta, aes(fill=AMR.Gene.Family, x=sample, y=proportion)) +geom_bar(position="fill",stat="identity")+facet_grid(. ~ type, scales="free", space="free")+
+p2<-ggplot(beta10_meta, aes(fill=AMR.Gene.Family, x=sample, y=proportion))+
+  geom_bar(position="fill",stat="identity")+
+  facet_grid(. ~ type, scales="free", space="free")+
   theme_bw()+
   theme(axis.text.x=element_text(angle=90))+
   theme(strip.text.x=element_text(face="bold"))+
-  scale_fill_manual(values = friendly_pal("ito_seven"))
+  scale_fill_manual(values = mycolors2)
 p2
 dev.off()
 
